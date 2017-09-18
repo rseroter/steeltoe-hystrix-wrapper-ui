@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="jumbotron">
+            <h1>Pivotal Store</h1>
+            <p>Drench yourself in Pivotal clothes and stickers to show your obsessive love for the company!</p>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h2>Recommended Products <small>Based on your past purchases.</small></h2>
+        @foreach (var item in ViewData["Recommendations"] as IEnumerable<core_hystrix_wrapper_ui.Models.Recommendations>)
+        {
+
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="@(item.ProductImage)">
+                </a>
+            </div>
+
+        //@item.FileName //instead .FileName use property which you have used in your model class
+        }
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
